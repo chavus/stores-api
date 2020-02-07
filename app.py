@@ -12,7 +12,7 @@ from resources.store import Store, StoreList
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environment.get('DATABASE_URL', 'sqlite:///data.db')  # if no DATABASE_URL is configured, second value is taken *default
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')  # if no DATABASE_URL is configured, second value is taken *default
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'chava'
 api = Api(app)
